@@ -53,8 +53,7 @@ def main(input_filepath: Path, destination_filepath: Path) -> None:
     # the following appears to equate to 1 pixel * 3 pixels in Excel
     ws.sheet_format = SheetFormatProperties(defaultColWidth=0.1, defaultRowHeight=2.5)
 
-    with Image.open(input_filepath) as image:
-        im = image
+    with Image.open(input_filepath) as im:
         width, height = im.size
         rgb_im = im.convert("RGB")
 
